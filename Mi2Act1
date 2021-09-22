@@ -1,0 +1,74 @@
+package Mi2Act1;
+import java.util.Scanner;
+
+public class Activity1 {
+	
+	Scanner myScan = new Scanner(System.in);
+	
+	String name;
+	int id;
+	double salary;
+	
+	public Activity1(String nameOfEmployee, int idOfEmployee, double salaryOfEmployee) {
+		double tax = salaryOfEmployee * 0.10;
+		name = nameOfEmployee;
+		id = idOfEmployee;
+		this.salary = salaryOfEmployee - tax;
+	}
+
+///////////////////////////////////////////////
+	String scanName() {						///
+		String itsName;						///
+		System.out.print("Name : ");		///
+		itsName = myScan.next();			///
+		return itsName;						///
+	}										///
+											///
+	int scanId() {							///
+		int itsId;							///
+		System.out.print("ID : ");			///====>For Scanning function
+		itsId = myScan.nextInt();			///
+		return itsId;						///
+	}										///
+											///
+	double scanSalary() {					///
+		double itsSalary;					///
+		System.out.print("Salary : ");		///
+		itsSalary = myScan.nextDouble();	///
+		return itsSalary;					///
+	}										///
+///////////////////////////////////////////////
+	
+	
+///////////////////////////////////////////////////////////
+	void printData () {									///
+		System.out.println("\nName : " + this.name);	///
+		System.out.println("ID : " + this.id);			///====>To Print Data function
+		System.out.println("Salary : " + this.salary);	///
+	}													///
+///////////////////////////////////////////////////////////
+	
+	
+	
+	public static void main(String[] args) {
+		Activity1 forCallingFunction = new Activity1(" ", 1, 1);
+		String employeeName;
+		int employeeId;
+		double employeeSalary;
+		
+		System.out.println("Enter employee 1 data!");
+		employeeName = forCallingFunction.scanName();		//	\\\\\\\\\\
+		employeeId = forCallingFunction.scanId();			//	 |||||||||>>>>	Calling function and store to variable
+		employeeSalary = forCallingFunction.scanSalary();	//	//////////
+		Activity1 employee1 = new Activity1(employeeName, employeeId, employeeSalary);
+		
+		System.out.println("\nEnter employee 2 data!");
+		employeeName = forCallingFunction.scanName();		//	\\\\\\\\\\
+		employeeId = forCallingFunction.scanId();			//	 |||||||||>>>>	Calling function and store to variable
+		employeeSalary = forCallingFunction.scanSalary();	//	//////////
+		Activity1 employee2 = new Activity1(employeeName, employeeId, employeeSalary);
+		
+		employee1.printData(); //calling function to print
+		employee2.printData(); //calling function to print
+	}
+}
