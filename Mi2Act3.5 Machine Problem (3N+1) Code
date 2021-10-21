@@ -1,0 +1,31 @@
+package Mi2Act3point5;
+import java.util.Scanner;
+
+//Machine Problem (3N+1) Code
+public class Main {
+	
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		
+		int num, num2;
+		
+		System.out.print("Input any positive Integer : ");
+		num = scan.nextInt();
+		
+		//multiply it by 3 and plus 1 if odd and divide 2 if even while the Integer is not equal to 1
+		while(num != 1) {
+			System.out.print("Current Given Value is " + num + "\n");
+			
+			if(num % 2 == 0) {
+				num2 = num / 2;
+				num = num2;
+			} else {
+				num2 = (num * 3) + 1;
+				num = num2;
+			}
+			
+		}
+		System.out.print("Current Given Value is " + num + "\n");
+		scan.close();
+	}
+}
